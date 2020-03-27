@@ -37,7 +37,10 @@
             <Image url="@../Pictures/images.jpg" />
          </image>
       </ImageView>
-      <Button layoutX="457.0" layoutY="359.0" mnemonicParsing="false" onAction="#irAlMenu" text="Menú principal" />
+      <Button layoutX="412.0" layoutY="356.0" mnemonicParsing="false" onAction="#irAlMenu" text="Menú principal">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font></Button>
       <ListView layoutX="180.0" layoutY="218.0" prefHeight="29.0" prefWidth="129.0" />
    </children>
 </Pane>
