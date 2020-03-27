@@ -11,14 +11,18 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class Kardex extends Application{
-	public static void main(String[] args) {
-        launch(args);
-    }
+	
+	private Stage ReferenceStage;
+	
+	public Stage getReferenceStage() {
+		return ReferenceStage;
+	}
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+    	ReferenceStage = primaryStage;
     	FXMLLoader loader = new FXMLLoader();
-    	loader.setController(new KardexController());
+    	loader.setController(new KardexController(this));
     	URL xmlUrl = getClass().getResource("Kardex.fxml");
     	loader.setLocation(xmlUrl);
     	AnchorPane root = loader.load();

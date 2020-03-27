@@ -12,15 +12,18 @@ import java.net.URL;
 import Controladores.AgregarProveedorController;
 
 public class Agregar_Proveedor extends Application{
-
-    public static void main(String[] args) {
-        launch(args);
-    }
-
+	
+	private Stage ReferenceStage;
+	
+	public Stage getReferenceStage() {
+		return ReferenceStage;
+	}
+	
     @Override
     public void start(Stage primaryStage) throws Exception {
+    	this.ReferenceStage = primaryStage; 
     	FXMLLoader loader = new FXMLLoader();
-    	loader.setController(new AgregarProveedorController());
+    	loader.setController(new AgregarProveedorController(this));
     	URL xmlUrl = getClass().getResource("Agregar_Proveedor.fxml");
     	loader.setLocation(xmlUrl);
     	AnchorPane root = loader.load();
@@ -28,4 +31,6 @@ public class Agregar_Proveedor extends Application{
     	primaryStage.setScene(new Scene(root));
     	primaryStage.show();
     }
+
+	
 }

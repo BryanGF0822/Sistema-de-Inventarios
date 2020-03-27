@@ -8,20 +8,25 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class Historial_Inventario extends Application{
-	public static void main(String[] args) {
-        launch(args);
-    }
+	
+	private Stage ReferenceStage;
+	
+	public Stage getReferenceStage() {
+		return ReferenceStage;
+	}
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+    	ReferenceStage = primaryStage;
     	FXMLLoader loader = new FXMLLoader();
-    	loader.setController(new Historial_InventarioController());
+    	loader.setController(new Historial_InventarioController(this));
     	URL xmlUrl = getClass().getResource("Historial_Inventario.fxml");
     	loader.setLocation(xmlUrl);
-    	AnchorPane root = loader.load();
+    	Pane root = loader.load();
 
     	primaryStage.setScene(new Scene(root));
     	primaryStage.show();

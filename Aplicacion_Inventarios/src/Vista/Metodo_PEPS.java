@@ -12,14 +12,17 @@ import javafx.stage.Stage;
 
 public class Metodo_PEPS extends Application{
 
-    public static void main(String[] args) {
-        launch(args);
-    }
+	private Stage ReferenceStage;
+	
+	public Stage getReferenceStage() {
+		return ReferenceStage;
+	}
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+    	ReferenceStage = primaryStage;
     	FXMLLoader loader = new FXMLLoader();
-    	loader.setController(new Metodo_PEPSController());
+    	loader.setController(new Metodo_PEPSController(this));
     	URL xmlUrl = getClass().getResource("Metodo_PEPS.fxml");
     	loader.setLocation(xmlUrl);
     	AnchorPane root = loader.load();
