@@ -15,20 +15,20 @@
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="24.0" layoutY="105.0" text="Producto:">
+      <Label layoutX="35.0" layoutY="164.0" text="Producto:">
          <font>
-            <Font size="18.0" />
+            <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="385.0" layoutY="173.0" text="Fecha de salida:">
+      <Label layoutX="398.0" layoutY="173.0" text="Fecha de salida:">
          <font>
-            <Font size="18.0" />
+            <Font size="14.0" />
          </font>
       </Label>
       <DatePicker layoutX="352.0" layoutY="196.0" promptText="dd/mm/yy" />
-      <Label layoutX="405.0" layoutY="105.0" text="Cantidada:">
+      <Label layoutX="414.0" layoutY="105.0" text="Cantidada:">
          <font>
-            <Font size="18.0" />
+            <Font size="14.0" />
          </font>
       </Label>
       <TextField layoutX="366.0" layoutY="128.0" />
