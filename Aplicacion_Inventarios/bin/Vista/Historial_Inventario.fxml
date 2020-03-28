@@ -9,21 +9,21 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label layoutX="189.0" layoutY="28.0" text="Historial fechas de entrada y salida.">
+      <Label layoutX="127.0" layoutY="28.0" text="Historial fechas de entrada y salida.">
          <font>
-            <Font name="System Bold Italic" size="18.0" />
+            <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="133.0" layoutY="120.0" text="Entradas:">
+      <Label layoutX="127.0" layoutY="118.0" text="Entradas:">
          <font>
-            <Font name="System Bold Italic" size="14.0" />
+            <Font size="17.0" />
          </font>
       </Label>
-      <Label layoutX="429.0" layoutY="120.0" text="Salidas:">
+      <Label layoutX="415.0" layoutY="118.0" text="Salidas:">
          <font>
-            <Font name="System Bold Italic" size="14.0" />
+            <Font size="17.0" />
          </font>
       </Label>
       <TableView layoutX="47.0" layoutY="151.0" prefHeight="200.0" prefWidth="227.0">
@@ -42,11 +42,12 @@
       </TableView>
       <ScrollBar layoutX="30.0" layoutY="175.0" orientation="VERTICAL" prefHeight="172.0" prefWidth="17.0" />
       <ScrollBar layoutX="321.0" layoutY="175.0" orientation="VERTICAL" prefHeight="172.0" prefWidth="17.0" />
-      <Button layoutX="247.0" layoutY="358.0" mnemonicParsing="false" onAction="#irAlMenu" text="Menú principal">
+      <Button layoutX="255.0" layoutY="362.0" mnemonicParsing="false" onAction="#irAlMenu" text="Menú principal" />
+      <Label layoutX="47.0" layoutY="80.0" text="Ordenar por:">
          <font>
-            <Font name="System Bold Italic" size="14.0" />
-         </font></Button>
-      <Label layoutX="58.0" layoutY="81.0" text="Ordenar por:" />
+            <Font size="15.0" />
+         </font>
+      </Label>
       <ComboBox layoutX="135.0" layoutY="76.0" prefWidth="150.0" promptText="Select" />
    </children>
 </Pane>
