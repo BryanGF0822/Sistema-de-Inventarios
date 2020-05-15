@@ -10,9 +10,11 @@ import javafx.stage.Stage;
 import java.net.URL;
 
 import Controladores.AgregarProveedorController;
+import Modelo.SistemaInventario;
 
 public class Agregar_Proveedor extends Application{
 	
+	private static SistemaInventario app;
 	private Stage ReferenceStage;
 	
 	public Stage getReferenceStage() {
@@ -23,14 +25,19 @@ public class Agregar_Proveedor extends Application{
     public void start(Stage primaryStage) throws Exception {
     	this.ReferenceStage = primaryStage; 
     	FXMLLoader loader = new FXMLLoader();
-    	loader.setController(new AgregarProveedorController(this));
+    	AgregarProveedorController ref = new AgregarProveedorController(this,app);
+    	loader.setController(ref);
     	URL xmlUrl = getClass().getResource("Agregar_Proveedor.fxml");
     	loader.setLocation(xmlUrl);
     	AnchorPane root = loader.load();
-
     	primaryStage.setScene(new Scene(root));
+    	ref.setup();
     	primaryStage.show();
     }
+
+	public void setApp(SistemaInventario app) {
+		this.app = app;
+	}
 
 	
 }

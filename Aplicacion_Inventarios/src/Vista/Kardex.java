@@ -4,6 +4,7 @@ import java.net.URL;
 
 import Controladores.Historial_InventarioController;
 import Controladores.KardexController;
+import Modelo.SistemaInventario;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -14,6 +15,8 @@ public class Kardex extends Application{
 	
 	private Stage ReferenceStage;
 	
+	private static SistemaInventario app;
+	
 	public Stage getReferenceStage() {
 		return ReferenceStage;
 	}
@@ -22,13 +25,17 @@ public class Kardex extends Application{
     public void start(Stage primaryStage) throws Exception {
     	ReferenceStage = primaryStage;
     	FXMLLoader loader = new FXMLLoader();
-    	loader.setController(new KardexController(this));
+    	loader.setController(new KardexController(this,app));
     	URL xmlUrl = getClass().getResource("Kardex.fxml");
     	loader.setLocation(xmlUrl);
     	AnchorPane root = loader.load();
 
     	primaryStage.setScene(new Scene(root));
     	primaryStage.show();
-    }	
+    }
+
+	public void setApp(SistemaInventario app) {
+		this.app=app;
+	}	
 }
 

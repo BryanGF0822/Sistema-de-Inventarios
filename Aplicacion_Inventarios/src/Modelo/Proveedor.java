@@ -5,17 +5,17 @@ import java.util.ArrayList;
 public class Proveedor {
 	private String nombre;
 	private String direccion;
+	private String cedula;
 	private String telefono;
-	private String tipoProducto;
 	private ArrayList<Categoria> categoriasDistribuidor;
 	
 	
-	public Proveedor(String nombre, String direccion, String telefono, String tipoProducto) {
+	public Proveedor(String nombre, String direccion, String telefono,String cedula) {
 		super();
 		this.nombre = nombre;
 		this.direccion = direccion;
 		this.telefono = telefono;
-		this.tipoProducto = tipoProducto;
+		this.cedula = cedula;
 		categoriasDistribuidor = new ArrayList<Categoria>();
 	}
 	
@@ -38,17 +38,20 @@ public class Proveedor {
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
-	public String getTipoProducto() {
-		return tipoProducto;
-	}
-	public void setTipoProducto(String tipoProducto) {
-		this.tipoProducto = tipoProducto;
-	}
+	
 	public ArrayList<Categoria> getCategoriasDistribuidor() {
 		return categoriasDistribuidor;
 	}
 	public void setCategoriasDistribuidor(ArrayList<Categoria> categoriasDistribuidor) {
 		this.categoriasDistribuidor = categoriasDistribuidor;
+	}
+
+	public String getCedula() {
+		return cedula;
+	}
+
+	public void setCedula(String cedula) {
+		this.cedula = cedula;
 	}
 	
 	

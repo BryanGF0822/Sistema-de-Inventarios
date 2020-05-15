@@ -1,19 +1,20 @@
 package Modelo;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 
 public class Factura {
 	private int identificador;
-	private Date fechaRealizacion;
+	private LocalDate fechaRealizacion;
 	private ArrayList<ItemArticulo> itemsFactura;
 	private Proveedor proveedor;
 	
 	
-	public Factura(int identificador, Date fechaRealizacion, Proveedor proveedor) {
+	public Factura(int identificador, LocalDate date, Proveedor proveedor) {
 		super();
 		this.identificador = identificador;
-		this.fechaRealizacion = fechaRealizacion;
+		this.fechaRealizacion = date;
 		this.proveedor = proveedor;
 		itemsFactura = new ArrayList<ItemArticulo>();
 	}
@@ -24,10 +25,10 @@ public class Factura {
 	public void setIdentificador(int identificador) {
 		this.identificador = identificador;
 	}
-	public Date getFechaRealizacion() {
+	public LocalDate getFechaRealizacion() {
 		return fechaRealizacion;
 	}
-	public void setFechaRealizacion(Date fechaRealizacion) {
+	public void setFechaRealizacion(LocalDate fechaRealizacion) {
 		this.fechaRealizacion = fechaRealizacion;
 	}
 	public ArrayList<ItemArticulo> getItemsFactura() {

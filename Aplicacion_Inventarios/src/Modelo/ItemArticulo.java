@@ -1,20 +1,23 @@
 package Modelo;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class ItemArticulo {
 	private double precioUnidad;
 	private int cantidad;
-	private Date fechaEntrada;
+	private LocalDate fechaEntrada;
 	private boolean disponible;
+	private String tipoOperacion;
+	private long id;
 	
-	
-	public ItemArticulo(double precioUnidad, int cantidad, Date fechaEntrada, boolean disponible) {
+	public ItemArticulo(double precioUnidad, int cantidad, LocalDate date, String tipoOperacion, boolean disponible) {
 		super();
 		this.precioUnidad = precioUnidad;
 		this.cantidad = cantidad;
-		this.fechaEntrada = fechaEntrada;
+		this.fechaEntrada = date;
 		this.disponible = disponible;
+		this.tipoOperacion = tipoOperacion;
 	}
 	
 	public double getPrecioUnidad() {
@@ -29,10 +32,10 @@ public class ItemArticulo {
 	public void setCantidad(int cantidad) {
 		this.cantidad = cantidad;
 	}
-	public Date getFechaEntrada() {
+	public LocalDate getFechaEntrada() {
 		return fechaEntrada;
 	}
-	public void setFechaEntrada(Date fechaEntrada) {
+	public void setFechaEntrada(LocalDate fechaEntrada) {
 		this.fechaEntrada = fechaEntrada;
 	}
 	public boolean isDisponible() {
@@ -40,6 +43,14 @@ public class ItemArticulo {
 	}
 	public void setDisponible(boolean disponible) {
 		this.disponible = disponible;
+	}
+
+	public String getTipoOperacion() {
+		return tipoOperacion;
+	}
+
+	public void setTipoOperacion(String tipoOperacion) {
+		this.tipoOperacion = tipoOperacion;
 	}
 	
 	

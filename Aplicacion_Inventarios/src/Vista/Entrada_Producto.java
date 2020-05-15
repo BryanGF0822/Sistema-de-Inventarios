@@ -13,10 +13,12 @@ import java.net.URL;
 
 import Controladores.AgregarProveedorController;
 import Controladores.Entrada_ProductoController;
+import Modelo.SistemaInventario;
 
 public class  Entrada_Producto  extends Application{
 
 	private Stage ReferenceStage;
+	private SistemaInventario app;
 	
 	public Stage getReferenceStage() {
 		return ReferenceStage;
@@ -26,13 +28,19 @@ public class  Entrada_Producto  extends Application{
     public void start(Stage primaryStage) throws Exception {
     	ReferenceStage = primaryStage;
     	FXMLLoader loader = new FXMLLoader();
-    	loader.setController(new Entrada_ProductoController(this));
+    	Entrada_ProductoController ref = new Entrada_ProductoController(this,app);
+    	loader.setController(ref);
     	URL xmlUrl = getClass().getResource("Entrada_Producto.fxml");
     	loader.setLocation(xmlUrl);
     	Pane root = loader.load();
-
     	primaryStage.setScene(new Scene(root));
     	primaryStage.show();
+    	ref.setUp();
     }
+
+	public void setApp(SistemaInventario app) {
+		this.app = app;
+		System.out.println(app);
+	}
 }
 

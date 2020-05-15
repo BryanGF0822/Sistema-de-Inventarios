@@ -10,48 +10,48 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label graphicTextGap="6.0" layoutX="198.0" layoutY="28.0" prefHeight="49.0" prefWidth="204.0" text="MENU PRINCIPAL">
+      <Label graphicTextGap="6.0" layoutX="229.0" layoutY="28.0" prefHeight="37.0" prefWidth="143.0" text="MENU PRINCIPAL">
          <font>
-            <Font name="System Bold Italic" size="24.0" />
+            <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
       <HBox layoutX="82.0" layoutY="84.0" prefHeight="277.0" prefWidth="505.0">
          <children>
-            <VBox prefHeight="267.0" prefWidth="243.0" spacing="10.0">
+            <VBox prefHeight="281.0" prefWidth="303.0" spacing="10.0">
                <children>
                   <Button mnemonicParsing="false" onAction="#ingresarProducto" text="ENTRADA PRODUCTO">
                      <font>
-                        <Font name="Cambria" size="14.0" />
+                        <Font name="System Bold Italic" size="14.0" />
                      </font>
                   </Button>
                   <Button mnemonicParsing="false" onAction="#liberarProducto" text="SALIDA PRODUCTO">
                      <font>
-                        <Font name="Cambria" size="14.0" />
+                        <Font name="System Bold Italic" size="14.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#agregarProveedor" text="AGREGAR PROVEEDOR">
+                  <Button mnemonicParsing="false" onAction="#agregarProveedor" text="REGISTRAR PROVEEDOR">
                      <font>
-                        <Font name="Cambria" size="14.0" />
+                        <Font name="System Bold Italic" size="14.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#historialInventario" text="HISTORIAL INVENTARIO">
+                  <Button mnemonicParsing="false" onAction="#historialInventario" text="CONSULTAR PRODUCTOS">
                      <font>
-                        <Font name="Cambria" size="14.0" />
+                        <Font name="System Bold Italic" size="14.0" />
                      </font>
                   </Button>
                   <Button mnemonicParsing="false" onAction="#tablaKardex" text="TABLA KARDEX">
                      <font>
-                        <Font name="Cambria" size="14.0" />
+                        <Font name="System Bold Italic" size="14.0" />
                      </font>
                   </Button>
                   <Button mnemonicParsing="false" onAction="#metodoPEPS" text="METODO PEPS">
                      <font>
-                        <Font name="Cambria" size="14.0" />
+                        <Font name="System Bold Italic" size="14.0" />
                      </font>
                   </Button>
                   <Button mnemonicParsing="false" onAction="#metodoPP" text="METODO PP">
                      <font>
-                        <Font name="Cambria" size="14.0" />
+                        <Font name="System Bold Italic" size="14.0" />
                      </font>
                   </Button>
                </children>
@@ -85,7 +85,7 @@
                         <Font name="Cambria" size="14.0" />
                      </font>
                   </Label>
-                  <Label prefHeight="25.0" prefWidth="217.0" text="Observe el estado del inventario">
+                  <Label prefHeight="25.0" prefWidth="217.0" text="consulte productos de interes">
                      <font>
                         <Font name="Cambria" size="14.0" />
                      </font>
