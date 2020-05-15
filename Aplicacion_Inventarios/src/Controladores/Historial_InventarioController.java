@@ -64,7 +64,15 @@ public class Historial_InventarioController {
     }
     
 	public void setup() {
-		
+		productChoice.getItems().clear();
+		for (Articulo it : app.getArticulos()) {
+			productChoice.getItems().add(it.getNombre()+" "+it.getCantidadMedida()+" "+it.getTipoMedida());
+		}
+		orderChoice.getItems().clear();
+		orderChoice.getItems().add("Fecha");
+		orderChoice.getItems().add("Orden alfabetico");
+		orderChoice.getItems().add("Cantidad de unidades adquiridas");
+		orderChoice.getItems().add("Cantidad de unidades vendidas");
 	}
 	
 	void createAlert(String message,AlertType mtype) {

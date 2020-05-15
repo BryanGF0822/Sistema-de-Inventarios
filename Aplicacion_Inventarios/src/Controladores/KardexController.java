@@ -115,7 +115,7 @@ public class KardexController {
     				precioU = (precioT/(double)cant);
     				infoTable.getItems().add(it.toString());
     				outTable.getItems().add(String.format("|%10.10s| - |%10.2f| - |%12.2f|", String.valueOf(cant),precioU,precioT));
-    			}else {
+    			}else if(it.getTipoOperacion().equals(Articulo.VENDIDO)){
     				ItemArticulo ref = new ItemArticulo(precioU,it.getCantidad(),it.getFechaEntrada(),it.getTipoOperacion(),it.isDisponible(),it.getId());
 					precioT -= ref.getPrecioUnidad()*ref.getCantidad();
 					cant -= ref.getCantidad();

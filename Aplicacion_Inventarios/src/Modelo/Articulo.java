@@ -11,6 +11,12 @@ public class Articulo {
 	private ArrayList<ItemArticulo> items;
 	private int cantidadDisponible;
 	private int cantidadVendida;
+	public static final String COMPRA = "Compra"; 
+	public static final String DEVOLUCION = "Devolucion"; 
+	public static final String REGALO = "Regalo"; 
+	public static final String VENDIDO = "Vendido"; 
+	public static final String DAÑADO = "Producto Dañado"; 
+	public static final String PROMO = "Promocion"; 
 	
 	
 	
@@ -94,5 +100,8 @@ public class Articulo {
 	
 	public void setAgregarU(int cant) {
 		cantidadDisponible += cant; 
+		if(cant<0) {
+			cantidadVendida += -cant;
+		}
 	}
 }

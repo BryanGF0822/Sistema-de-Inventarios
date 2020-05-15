@@ -142,9 +142,9 @@ public class Entrada_ProductoController {
 			proveedorPicker.getItems().add("Nombre: "+it.getNombre()+" cc: "+it.getCedula());
 		}
 
-		tipoEntradaPicker.getItems().add("Compra");
-		tipoEntradaPicker.getItems().add("Devolucion");
-		tipoEntradaPicker.getItems().add("Regalo");
+		tipoEntradaPicker.getItems().add(Articulo.COMPRA);
+		tipoEntradaPicker.getItems().add(Articulo.DEVOLUCION);
+		tipoEntradaPicker.getItems().add(Articulo.REGALO);
 		
 		tempFactura = new Factura(app.getId_facturas_compra(), null, null);
 	}

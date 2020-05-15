@@ -80,9 +80,9 @@ public class Salida_ProductoController {
     }
     
     public void setup() {
-		tipoChoice.getItems().add("Vendido");
-		tipoChoice.getItems().add("Producto dañado");
-		tipoChoice.getItems().add("Promocion");
+		tipoChoice.getItems().add(Articulo.VENDIDO);
+		tipoChoice.getItems().add(Articulo.DAÑADO);
+		tipoChoice.getItems().add(Articulo.PROMO);
 		productsList.getItems().clear();
 		int pos = 0;
 		for (Articulo it : app.getArticulos()) {
