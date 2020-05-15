@@ -3,50 +3,46 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollBar?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="474.0" prefWidth="749.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label layoutX="189.0" layoutY="28.0" text="Historial fechas de entrada y salida.">
+      <Label layoutX="293.0" layoutY="14.0" text="Consulta de referencias">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="133.0" layoutY="120.0" text="Entradas:">
+      <Label layoutX="152.0" layoutY="130.0" text="Entradas:">
          <font>
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="429.0" layoutY="120.0" text="Salidas:">
+      <Label layoutX="526.0" layoutY="130.0" text="Salidas:">
          <font>
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Label>
-      <TableView layoutX="47.0" layoutY="151.0" prefHeight="200.0" prefWidth="227.0">
-        <columns>
-          <TableColumn prefWidth="75.0" text="Producto" />
-          <TableColumn prefWidth="75.0" text="Cantidad" />
-            <TableColumn prefWidth="75.0" text="Fecha" />
-        </columns>
-      </TableView>
-      <TableView layoutX="338.0" layoutY="151.0" prefHeight="200.0" prefWidth="227.0">
-         <columns>
-            <TableColumn prefWidth="75.0" text="Producto" />
-            <TableColumn prefWidth="75.0" text="Cantidad" />
-            <TableColumn prefWidth="75.0" text="Fecha" />
-         </columns>
-      </TableView>
-      <ScrollBar layoutX="30.0" layoutY="175.0" orientation="VERTICAL" prefHeight="172.0" prefWidth="17.0" />
-      <ScrollBar layoutX="321.0" layoutY="175.0" orientation="VERTICAL" prefHeight="172.0" prefWidth="17.0" />
-      <Button layoutX="247.0" layoutY="358.0" mnemonicParsing="false" onAction="#irAlMenu" text="Menú principal">
+      <Button layoutX="345.0" layoutY="415.0" mnemonicParsing="false" onAction="#irAlMenu" text="Menú principal">
          <font>
             <Font name="System Bold Italic" size="14.0" />
          </font></Button>
-      <Label layoutX="58.0" layoutY="81.0" text="Ordenar por:" />
-      <ComboBox layoutX="135.0" layoutY="76.0" prefWidth="150.0" promptText="Select" />
+      <Label layoutX="77.0" layoutY="67.0" text="Ordenar por:" />
+      <ComboBox fx:id="orderChoice" layoutX="77.0" layoutY="96.0" prefWidth="150.0" />
+      <ListView fx:id="inList" layoutX="73.0" layoutY="160.0" prefHeight="223.0" prefWidth="251.0" />
+      <ListView fx:id="outList" layoutX="440.0" layoutY="160.0" prefHeight="223.0" prefWidth="251.0" />
+      <ComboBox fx:id="productChoice" layoutX="440.0" layoutY="96.0" prefWidth="150.0" />
+      <Label layoutX="440.0" layoutY="67.0" text="Selecciona un item en particular:" />
+      <Button layoutX="637.0" layoutY="96.0" mnemonicParsing="false" onAction="#search" text="Buscar">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="261.0" layoutY="96.0" mnemonicParsing="false" onAction="#order" text="Ordenar">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Button>
    </children>
 </Pane>

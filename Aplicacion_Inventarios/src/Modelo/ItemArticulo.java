@@ -65,7 +65,7 @@ public class ItemArticulo {
 
 	@Override
 	public String toString() {
-		String out = String.format("|%s| - |%d| - |%f| - |%f|", fechaEntrada.toString(), cantidad, precioUnidad, cantidad*precioUnidad);
+		String out = String.format("|%10.10s| -|%-10.10s| - |%10.10s| - |%10.2f| - |%12.2f|", fechaEntrada.toString(), tipoOperacion, String.valueOf(cantidad), precioUnidad, cantidad*precioUnidad);
 		return out;
 	}
 	
@@ -73,7 +73,7 @@ public class ItemArticulo {
 
 		@Override
 		public int compare(ItemArticulo o1, ItemArticulo o2) {
-			if(o1.getFechaEntrada().equals(o1.getFechaEntrada())) return (int) (o1.id-o2.cantidad);
+			if(o1.getFechaEntrada().equals(o1.getFechaEntrada())) return (int) (o1.id-o2.id);
 			return o1.getFechaEntrada().compareTo(o2.getFechaEntrada());
 		}
     };

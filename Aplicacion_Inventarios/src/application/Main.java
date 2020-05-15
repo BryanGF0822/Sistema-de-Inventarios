@@ -52,7 +52,9 @@ public class Main extends Application {
 		ref.getItems().add(itemR);
 		itemR = new ItemArticulo(2200, 20, LocalDate.now(), "Compra", true,app.getId_item());
 		ref.getItems().add(itemR);
-		ref.setAgregarU(40);
+		itemR = new ItemArticulo(2100, 30, LocalDate.now(), "Compra", true,app.getId_item());
+		ref.getItems().add(itemR);
+		ref.setAgregarU(70);
 		app.getArticulos().add(ref);
 		
 		ref = new Articulo("Cerveza corona", "ml", 500, app.getId_Articulo());

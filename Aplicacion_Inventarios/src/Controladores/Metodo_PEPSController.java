@@ -15,11 +15,13 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableColumn.CellDataFeatures;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.util.Callback;
 import javafx.scene.control.Alert.AlertType;
@@ -29,15 +31,19 @@ public class Metodo_PEPSController {
 	private static SistemaInventario app;
 	@FXML
     private ListView<String> infoTable;
+	
+	@FXML
+    private ListView<String> outTable;
 
     @FXML
-    private ChoiceBox<String> artChoice;
+    private  ComboBox<String> artChoice;
 
     @FXML
     private Label cstLabel;
 
     @FXML
     private Button calcButton;
+    
 	
 	public Metodo_PEPSController(Metodo_PEPS reference, SistemaInventario app) {
 		this.reference = reference;
@@ -48,11 +54,53 @@ public class Metodo_PEPSController {
     @FXML
     void calcKardex(ActionEvent event) {
     	Integer indx = artChoice.getSelectionModel().getSelectedIndex();
-    	infoTable.getItems().clear();
+    	setup();
+    	double precioT = 0;
+    	double precioU = 0;
+    	int cant = 0;
+    	ArrayList<Double>precioUH = new ArrayList<Double>();
+    	ArrayList<Integer> cantH = new ArrayList<Integer>();
+    	int pos = 0;
     	if(indx != -1) {
     		ArrayList<ItemArticulo> items = app.getItemsKardex(indx);
     		for(ItemArticulo it : items) {
-    			infoTable.getItems().add(it.toString());
+    			if(it.isDisponible()) {
+    				precioT += it.getPrecioUnidad()*it.getCantidad();
+    				cant = it.getCantidad();
+    				precioU = it.getPrecioUnidad();
+    				precioUH.add(it.getPrecioUnidad());
+    				cantH.add(it.getCantidad());
+    				infoTable.getItems().add(it.toString());
+    				outTable.getItems().add(String.format("|%10.10s| - |%10.2f| - |%12.2f|", String.valueOf(cant),precioU,precioT));
+    			}else {
+    				int c_vent = it.getCantidad();
+    				int i = 0;
+    				for (i = pos; i < cantH.size() && c_vent>0; i++) {
+    					ItemArticulo ref;
+    					if(c_vent - cantH.get(i)>=0) {
+    						ref = new ItemArticulo(precioUH.get(i), cantH.get(i), it.getFechaEntrada(), it.getTipoOperacion(), it.isDisponible(), it.getId());
+    						c_vent -= cantH.get(i);
+    						precioT -= cantH.get(i)*precioUH.get(i);
+    	    				cant -= cantH.get(i);
+    	    				pos++;
+    					}else {
+    						ref = new ItemArticulo(precioUH.get(i), c_vent, it.getFechaEntrada(), it.getTipoOperacion(), it.isDisponible(), it.getId());
+    						cantH.set(i, cantH.get(i)-c_vent);
+    						precioT -= c_vent*precioUH.get(i);
+    	    				cant -= c_vent;
+    	    				c_vent = 0;
+    					}
+    					infoTable.getItems().add(ref.toString());
+    					outTable.getItems().add("");
+					}
+    				outTable.getItems().remove(outTable.getItems().size()-1);
+    				double tempVal = 0;
+    				for (i = pos; i < cantH.size(); i++) {
+    					if(i!=cantH.size()-1)infoTable.getItems().add("");
+    					tempVal += cantH.get(i)*precioUH.get(i); 
+    					outTable.getItems().add(String.format("|%10.10s| - |%10.2f| - |%12.2f|", String.valueOf(cantH.get(i)),precioUH.get(i),tempVal));
+    				}
+    			}
     		}
     	}else {
     		createAlert("Selecciona un articulo!",AlertType.WARNING);
@@ -66,10 +114,19 @@ public class Metodo_PEPSController {
 		ventana.start(reference.getReferenceStage());
     }
 	
+	
 	public void setup() {
+		artChoice.getItems().clear();
 		for (Articulo it : app.getArticulos()) {
 			artChoice.getItems().add(it.getNombre()+" "+it.getCantidadMedida()+" "+it.getTipoMedida());
 		}
+		infoTable.getItems().clear();
+		outTable.getItems().clear();
+		infoTable.getItems().add("|________________________________Entradas/Salidas_______________________________|");	
+		infoTable.getItems().add("|___Fecha___|- |___Tipo___| - |Cantidad| - |___Precio Unt___| - |___Precio total___|");		
+		outTable.getItems().add("|_____________________SALDO_______________________|");	
+		outTable.getItems().add("|_Cantidad_| - |___Precio Unt___| - |___Precio total___|");		
+		
 	}
 	
 	void createAlert(String message,AlertType mtype) {

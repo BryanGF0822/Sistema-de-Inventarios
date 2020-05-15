@@ -25,12 +25,14 @@ public class Kardex extends Application{
     public void start(Stage primaryStage) throws Exception {
     	ReferenceStage = primaryStage;
     	FXMLLoader loader = new FXMLLoader();
-    	loader.setController(new KardexController(this,app));
+    	KardexController ref = new KardexController(this,app);
+    	loader.setController(ref);
     	URL xmlUrl = getClass().getResource("Kardex.fxml");
     	loader.setLocation(xmlUrl);
     	AnchorPane root = loader.load();
 
     	primaryStage.setScene(new Scene(root));
+    	ref.setup();
     	primaryStage.show();
     }
 

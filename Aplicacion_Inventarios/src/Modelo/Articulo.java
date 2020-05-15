@@ -10,6 +10,7 @@ public class Articulo {
 	private ArrayList<Categoria> categorias;
 	private ArrayList<ItemArticulo> items;
 	private int cantidadDisponible;
+	private int cantidadVendida;
 	
 	
 	
@@ -22,6 +23,7 @@ public class Articulo {
 		categorias = new ArrayList<Categoria>();
 		items = new ArrayList<ItemArticulo>();
 		cantidadDisponible = 0;
+		cantidadVendida = 0;
 	}
 	
 	public String getNombre() {
@@ -73,11 +75,23 @@ public class Articulo {
 		return id;
 	}
 
+	public int getCantidadVendida() {
+		return cantidadVendida;
+	}
+
+	public void setCantidadVendida(int cantidadVendida) {
+		this.cantidadVendida = cantidadVendida;
+	}
+
 	@Override
 	public String toString() {
 		return nombre +" " + cantidadMedida +" "+ tipoMedida;
 	}
-
+	
+	public String toString2() {
+		return null;
+	}
+	
 	public void setAgregarU(int cant) {
 		cantidadDisponible += cant; 
 	}

@@ -25,12 +25,13 @@ public class Historial_Inventario extends Application{
     public void start(Stage primaryStage) throws Exception {
     	ReferenceStage = primaryStage;
     	FXMLLoader loader = new FXMLLoader();
-    	loader.setController(new Historial_InventarioController(this,app));
+    	Historial_InventarioController ref = new Historial_InventarioController(this,app);
+    	loader.setController(ref);
     	URL xmlUrl = getClass().getResource("Historial_Inventario.fxml");
     	loader.setLocation(xmlUrl);
     	Pane root = loader.load();
-
     	primaryStage.setScene(new Scene(root));
+    	ref.setup();
     	primaryStage.show();
     }
 
