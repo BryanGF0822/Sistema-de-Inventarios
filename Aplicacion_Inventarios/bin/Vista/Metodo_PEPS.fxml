@@ -1,73 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="590.0" prefWidth="873.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label layoutX="103.0" layoutY="45.0" text="Evaluacion de inventario">
+      <Label layoutX="112.0" layoutY="31.0" text="Evaluacion de inventario">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="365.0" layoutY="45.0" text="Metodo PEPS">
+      <Label layoutX="381.0" layoutY="31.0" text="Metodo PEPS">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <Pane layoutX="87.0" layoutY="100.0" prefHeight="200.0" prefWidth="442.0">
-         <children>
-            <MenuBar prefHeight="25.0" prefWidth="442.0">
-              <menus>
-                <Menu mnemonicParsing="false" text="Concepto">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="Close" />
-                  </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Cantidad">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="Delete" />
-                  </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Costo">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="About" />
-                  </items>
-                </Menu>
-                  <Menu mnemonicParsing="false" text="Saldo">
-                     <items>
-                        <MenuItem mnemonicParsing="false" text="About" />
-                     </items>
-                  </Menu>
-                  <Menu mnemonicParsing="false" text="Inventario">
-                     <items>
-                        <MenuItem mnemonicParsing="false" text="About" />
-                     </items>
-                  </Menu>
-                  <Menu mnemonicParsing="false" text="Costo">
-                     <items>
-                        <MenuItem mnemonicParsing="false" text="About" />
-                     </items>
-                  </Menu>
-                  <Menu mnemonicParsing="false" text="Saldo Total">
-                     <items>
-                        <MenuItem mnemonicParsing="false" text="About" />
-                     </items>
-                  </Menu>
-              </menus>
-            </MenuBar>
-         </children>
-      </Pane>
-      <Button layoutX="248.0" layoutY="337.0" mnemonicParsing="false" onAction="#irAlMenu" text="Menu Principal">
+      <Button layoutX="752.0" layoutY="515.0" mnemonicParsing="false" onAction="#irAlMenu" text="Retornar">
          <font>
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Button>
+      <ChoiceBox fx:id="artChoice" layoutX="361.0" layoutY="79.0" prefWidth="150.0" />
+      <Label layoutX="19.0" layoutY="81.0" text="Escoge el articulo al que le quieres hacer la evalución:" />
+      <Label layoutX="47.0" layoutY="512.0" text="El costo de vender una unidad  se encuentra en la columna de Saldo-Cst unitario">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="cstLabel" layoutX="45.0" layoutY="537.0" prefHeight="20.0" prefWidth="105.0" text="\$0">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="calcButton" layoutX="561.0" layoutY="74.0" mnemonicParsing="false" onAction="#calcKardex" text="Calcular Kardex" />
+      <ListView fx:id="infoTable" layoutX="45.0" layoutY="160.0" prefHeight="292.0" prefWidth="735.0" />
    </children>
 </AnchorPane>

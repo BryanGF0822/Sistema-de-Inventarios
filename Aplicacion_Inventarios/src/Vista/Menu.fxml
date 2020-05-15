@@ -44,16 +44,6 @@
                         <Font name="System Bold Italic" size="14.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#metodoPEPS" text="METODO PEPS">
-                     <font>
-                        <Font name="System Bold Italic" size="14.0" />
-                     </font>
-                  </Button>
-                  <Button mnemonicParsing="false" onAction="#metodoPP" text="METODO PP">
-                     <font>
-                        <Font name="System Bold Italic" size="14.0" />
-                     </font>
-                  </Button>
                </children>
                <HBox.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -62,7 +52,7 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
             </VBox>
-            <VBox prefHeight="277.0" prefWidth="355.0" spacing="20.0">
+            <VBox prefHeight="277.0" prefWidth="355.0" spacing="21.0">
                <HBox.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </HBox.margin>
@@ -85,22 +75,12 @@
                         <Font name="Cambria" size="14.0" />
                      </font>
                   </Label>
-                  <Label prefHeight="25.0" prefWidth="217.0" text="consulte productos de interes">
+                  <Label prefHeight="25.0" prefWidth="217.0" text="Consulte productos de interes">
                      <font>
                         <Font name="Cambria" size="14.0" />
                      </font>
                   </Label>
                   <Label text="Observe la tabla Kardex del inventario">
-                     <font>
-                        <Font name="Cambria" size="14.0" />
-                     </font>
-                  </Label>
-                  <Label text="Valoración actual de su inventario con PEPS">
-                     <font>
-                        <Font name="Cambria" size="14.0" />
-                     </font>
-                  </Label>
-                  <Label text="Valoración actual de su inventario con PP">
                      <font>
                         <Font name="Cambria" size="14.0" />
                      </font>

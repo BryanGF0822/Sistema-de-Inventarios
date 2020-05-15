@@ -1,5 +1,9 @@
 package application;
 	
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+
 import Modelo.Articulo;
 import Modelo.Categoria;
 import Modelo.ItemArticulo;
@@ -44,19 +48,21 @@ public class Main extends Application {
 		Articulo ref = new Articulo("Jugo hit", "ml", 600,app.getId_Articulo());
 		ref.getCategorias().add(app.getCategorias().get(3));
 		
-		ItemArticulo itemR = new ItemArticulo(2000, 20, null, "Compra", true);
-		ref.getItemsComprados().add(itemR);
-		itemR = new ItemArticulo(2200, 20, null, "Compra", true);
-		ref.getItemsComprados().add(itemR);
+		ItemArticulo itemR = new ItemArticulo(2000, 20, LocalDate.now(), "Compra", true,app.getId_item());
+		ref.getItems().add(itemR);
+		itemR = new ItemArticulo(2200, 20, LocalDate.now(), "Compra", true,app.getId_item());
+		ref.getItems().add(itemR);
+		ref.setAgregarU(40);
 		app.getArticulos().add(ref);
 		
 		ref = new Articulo("Cerveza corona", "ml", 500, app.getId_Articulo());
 		ref.getCategorias().add(app.getCategorias().get(0));
 		
-		itemR = new ItemArticulo(3200, 50, null, "Compra", true);
-		ref.getItemsComprados().add(itemR);
-		itemR = new ItemArticulo(4000, 20, null, "Compra", true);
-		ref.getItemsComprados().add(itemR);
+		itemR = new ItemArticulo(3200, 50, LocalDate.now(), "Compra", true,app.getId_item());
+		ref.getItems().add(itemR);
+		itemR = new ItemArticulo(4000, 20, LocalDate.now(), "Compra", true,app.getId_item());
+		ref.getItems().add(itemR);
+		ref.setAgregarU(70);
 		app.getArticulos().add(ref);
 		
 		launch(args);

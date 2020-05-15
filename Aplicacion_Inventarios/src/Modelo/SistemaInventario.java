@@ -1,6 +1,7 @@
 package Modelo;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class SistemaInventario {
 	private ArrayList<Factura> facturasDeVenta;
@@ -119,6 +120,24 @@ public class SistemaInventario {
 
 	public void setId_Articulo(int id_Articulo) {
 		this.id_Articulo = id_Articulo;
+	}
+	
+	public int getId_Item() {
+		id_item++;
+		return id_Articulo;
+	}
+
+	public void setId_Item(long id_item) {
+		this.id_Articulo = id_Articulo;
+	}
+
+	public ArrayList<ItemArticulo> getItemsKardex(Integer indx) {
+		ArrayList<ItemArticulo> ref = new ArrayList<ItemArticulo>();
+		for(ItemArticulo it : articulos.get(indx).getItems()) {
+			ref.add(it);
+		}
+		Collections.sort(ref, ItemArticulo.dateComparator);
+		return ref;
 	}
 	
 	

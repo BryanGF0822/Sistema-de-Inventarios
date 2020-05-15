@@ -1,6 +1,7 @@
 package Controladores;
 
 import Modelo.SistemaInventario;
+import Vista.Kardex;
 import Vista.Menu;
 import Vista.Metodo_PP;
 import Vista.Salida_Producto;
@@ -18,7 +19,7 @@ public class Metodo_PPController {
 	}
 	@FXML
     void irAlMenu(ActionEvent event) throws Exception {
-		Menu ventana = new Menu();
+		Kardex ventana = new Kardex();
 		ventana.setApp(app);
 		ventana.start(reference.getReferenceStage());
     }

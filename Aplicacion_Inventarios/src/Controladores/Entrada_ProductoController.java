@@ -68,31 +68,32 @@ public class Entrada_ProductoController {
 		Integer proveedor = proveedorPicker.getSelectionModel().getSelectedIndex();
 		LocalDate date = fechaPicker.getValue();
 		if(priceText.getText().equals("") || cantidadText.getText().equals("") || categoria == null || proveedor == null || date == null || artiInteger == null){
-			createAlert("Alguno de los campos no ha sido escrito ó selecionado apropiadamente");
+			createAlert("Alguno de los campos no ha sido escrito ó selecionado apropiadamente",AlertType.WARNING);
 			 
 		}else {
 			int cant = -1;
 			try {
 				 cant = Integer.parseInt(cantidadText.getText());
 			 }catch (Exception e) {
-				 createAlert("El campo de cantida no tiene un valor numerico valido");
+				 createAlert("El campo de cantidad no tiene un valor numerico valido",AlertType.WARNING);
 			}
 			double valor = -1;
 			try {
 				 valor = Double.parseDouble(priceText.getText());
 			 }catch (Exception e) {
-				 createAlert("El campo de  no tiene un valor numerico valido");
+				 createAlert("El campo de  no tiene un valor numerico valido",AlertType.WARNING);
 			}
 			if(cant>0 && valor>0) {
 				tempFactura.setFechaRealizacion(date);
 				
 				tempFactura.setProveedor(app.searchProveedor(proveedor));
-				ItemArticulo item = new ItemArticulo(valor,cant, date, categoria, true);
+				ItemArticulo item = new ItemArticulo(valor,cant, date, categoria, true,app.getId_item());
 				
-				app.getArticulos().get(artiInteger).getItemsComprados().add(item);
+				app.getArticulos().get(artiInteger).getItems().add(item);
+				app.getArticulos().get(artiInteger).setAgregarU(cant);
 				tempFactura.getItemsFactura().add(item);
 				
-				createAlert("Producto registrado correctamente");
+				createAlert("Producto registrado correctamente",AlertType.INFORMATION);
 				
 				String replace[] = numArticulos.getText().split(": ");
 				numArticulos.setText(replace[0]+": "+(Integer.parseInt(replace[1])+1));
@@ -122,12 +123,12 @@ public class Entrada_ProductoController {
 		ventana.start(reference.getReferenceStage());
     }
     
-    void createAlert(String message) {
-    	 Alert a = new Alert(AlertType.NONE);
-		 a.setContentText(message);
-		 a.setAlertType(AlertType.INFORMATION);
-		 a.show();
-    }
+    void createAlert(String message,AlertType mtype) {
+	   	 Alert a = new Alert(AlertType.NONE);
+	   	 a.setContentText(message);
+	   	 a.setAlertType(mtype);
+	   	 a.show();
+	}
 
 
 
@@ -140,11 +141,10 @@ public class Entrada_ProductoController {
 		for (Proveedor it : app.getProveedores()) {
 			proveedorPicker.getItems().add("Nombre: "+it.getNombre()+" cc: "+it.getCedula());
 		}
-		
+
+		tipoEntradaPicker.getItems().add("Compra");
 		tipoEntradaPicker.getItems().add("Devolucion");
 		tipoEntradaPicker.getItems().add("Regalo");
-		tipoEntradaPicker.getItems().add("Compra");
-		
 		
 		tempFactura = new Factura(app.getId_facturas_compra(), null, null);
 	}

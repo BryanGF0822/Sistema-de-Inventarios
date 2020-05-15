@@ -8,7 +8,8 @@ public class Articulo {
 	private String tipoMedida;
 	private double cantidadMedida;
 	private ArrayList<Categoria> categorias;
-	private ArrayList<ItemArticulo> itemsComprados;
+	private ArrayList<ItemArticulo> items;
+	private int cantidadDisponible;
 	
 	
 	
@@ -19,8 +20,8 @@ public class Articulo {
 		this.cantidadMedida = cantidadMedida;
 		this.id = id;
 		categorias = new ArrayList<Categoria>();
-		itemsComprados = new ArrayList<ItemArticulo>();
-		
+		items = new ArrayList<ItemArticulo>();
+		cantidadDisponible = 0;
 	}
 	
 	public String getNombre() {
@@ -48,12 +49,24 @@ public class Articulo {
 		this.categorias = categorias;
 	}
 
-	public ArrayList<ItemArticulo> getItemsComprados() {
-		return itemsComprados;
+	public ArrayList<ItemArticulo> getItems() {
+		return items;
 	}
 
-	public void setItemsComprados(ArrayList<ItemArticulo> itemsComprados) {
-		this.itemsComprados = itemsComprados;
+	public void setItems(ArrayList<ItemArticulo> itemsComprados) {
+		this.items = itemsComprados;
+	}
+	
+	public int getCantidadDisponible() {
+		return cantidadDisponible;
+	}
+
+	public void setCantidadDisponible(int cantidadDisponible) {
+		this.cantidadDisponible = cantidadDisponible;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public int getId() {
@@ -63,5 +76,9 @@ public class Articulo {
 	@Override
 	public String toString() {
 		return nombre +" " + cantidadMedida +" "+ tipoMedida;
+	}
+
+	public void setAgregarU(int cant) {
+		cantidadDisponible += cant; 
 	}
 }

@@ -1,6 +1,7 @@
 package Modelo;
 
 import java.time.LocalDate;
+import java.util.Comparator;
 import java.util.Date;
 
 public class ItemArticulo {
@@ -11,13 +12,14 @@ public class ItemArticulo {
 	private String tipoOperacion;
 	private long id;
 	
-	public ItemArticulo(double precioUnidad, int cantidad, LocalDate date, String tipoOperacion, boolean disponible) {
+	public ItemArticulo(double precioUnidad, int cantidad, LocalDate date, String tipoOperacion, boolean disponible,long id) {
 		super();
 		this.precioUnidad = precioUnidad;
 		this.cantidad = cantidad;
 		this.fechaEntrada = date;
 		this.disponible = disponible;
 		this.tipoOperacion = tipoOperacion;
+		this.id = id;
 	}
 	
 	public double getPrecioUnidad() {
@@ -52,6 +54,29 @@ public class ItemArticulo {
 	public void setTipoOperacion(String tipoOperacion) {
 		this.tipoOperacion = tipoOperacion;
 	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	@Override
+	public String toString() {
+		String out = String.format("|%s| - |%d| - |%f| - |%f|", fechaEntrada.toString(), cantidad, precioUnidad, cantidad*precioUnidad);
+		return out;
+	}
+	
+	public static Comparator<ItemArticulo> dateComparator = new Comparator<ItemArticulo>() {
+
+		@Override
+		public int compare(ItemArticulo o1, ItemArticulo o2) {
+			if(o1.getFechaEntrada().equals(o1.getFechaEntrada())) return (int) (o1.id-o2.cantidad);
+			return o1.getFechaEntrada().compareTo(o2.getFechaEntrada());
+		}
+    };
 	
 	
 }

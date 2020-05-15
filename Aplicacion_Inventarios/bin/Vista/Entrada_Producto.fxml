@@ -10,18 +10,20 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <TextField fx:id="priceText" layoutX="200.0" layoutY="132.0" prefHeight="25.0" prefWidth="121.0" />
+      <TextField fx:id="priceText" layoutX="200.0" layoutY="86.0" prefHeight="25.0" prefWidth="121.0" />
       <TextField fx:id="cantidadText" layoutX="236.0" layoutY="174.0" prefHeight="25.0" prefWidth="85.0" />
       <Button layoutX="114.0" layoutY="357.0" mnemonicParsing="false" onAction="#agregarProducto" text="Agregar Entrada de Producto">
          <font>
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Button>
-      <Label layoutX="41.0" layoutY="136.0" text="Precio por unidad:" />
+      <Label layoutX="43.0" layoutY="90.0" text="Precio por unidad:" />
       <Label layoutX="41.0" layoutY="178.0" text="Cantidad del producto recibido:" />
       <Label layoutX="43.0" layoutY="275.0" text="Fecha de entrada:" />
-      <Label layoutX="43.0" layoutY="310.0" text="Tipo entrada:" />
+      <Label layoutX="43.0" layoutY="310.0" text="Categoria:" />
+      <Label layoutX="43.0" layoutY="127.0" text="Unidad de Medicion:" />
       <Label layoutX="43.0" layoutY="224.0" text="Nombre del proveedor:" />
+      <TextField fx:id="undadText" layoutX="200.0" layoutY="123.0" prefHeight="25.0" prefWidth="121.0" />
       <Label graphicTextGap="6.0" layoutX="137.0" layoutY="23.0" prefHeight="45.0" prefWidth="368.0" text="Registrar Entrada de producto al Inventario">
          <font>
             <Font name="System Bold Italic" size="18.0" />
@@ -31,18 +33,8 @@
          <font>
             <Font name="System Bold Italic" size="14.0" />
          </font></Button>
-      <ChoiceBox fx:id="tipoEntradaPicker" layoutX="178.0" layoutY="306.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="categoriaPicker" layoutX="178.0" layoutY="306.0" prefWidth="150.0" />
       <DatePicker fx:id="fechaPicker" layoutX="154.0" layoutY="271.0" />
       <ChoiceBox fx:id="proveedorPicker" layoutX="178.0" layoutY="220.0" prefWidth="150.0" />
-      <ChoiceBox fx:id="articuloPicker" layoutX="178.0" layoutY="83.0" prefWidth="150.0" />
-      <Label layoutX="41.0" layoutY="87.0" text="Referencia :" />
-      <Label layoutX="373.0" layoutY="60.0" text="Si no encuentras la referencia crea una!" />
-      <Button layoutX="422.0" layoutY="83.0" mnemonicParsing="false" onAction="#crearNuevoArticulo" text="Crear  referencia">
-         <font>
-            <Font name="System Bold Italic" size="12.0" />
-         </font>
-      </Button>
-      <Label fx:id="numArticulos" layoutX="366.0" layoutY="275.0" text="# de productos registrados: 0" />
-      <Label fx:id="valorArticulos" layoutX="366.0" layoutY="302.0" text="valor de los nuevos productos : 0" />
    </children>
 </Pane>

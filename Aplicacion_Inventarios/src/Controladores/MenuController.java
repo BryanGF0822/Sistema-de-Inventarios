@@ -53,20 +53,6 @@ public class MenuController {
     }
 
     @FXML
-    void metodoPEPS(ActionEvent event) throws Exception {
-    	Metodo_PEPS ventana = new Metodo_PEPS();
-    	ventana.setApp(app);
-    	ventana.start(reference.getReferenceStage());
-    }
-
-    @FXML
-    void metodoPP(ActionEvent event) throws Exception {
-    	Metodo_PP ventana = new Metodo_PP();
-    	ventana.setApp(app);
-    	ventana.start(reference.getReferenceStage());
-    }
-
-    @FXML
     void tablaKardex(ActionEvent event) throws Exception {
     	Kardex ventana = new Kardex();
     	ventana.setApp(app);

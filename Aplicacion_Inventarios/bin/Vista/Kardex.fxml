@@ -2,7 +2,6 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -18,10 +17,20 @@
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Button>
-      <TitledPane animated="false" layoutX="51.0" layoutY="86.0" prefHeight="208.0" prefWidth="513.0" text="untitled">
-        <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-        </content>
-      </TitledPane>
+      <Button layoutX="172.0" layoutY="151.0" mnemonicParsing="false" onAction="#createPP" text="Metodo promedio ponderado">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="239.0" layoutY="214.0" mnemonicParsing="false" onAction="#createPEPS" text="Metodo PEPS">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Button>
+      <Label layoutX="89.0" layoutY="96.0" text="Puedes crear la tabla de kardex usando cualquiera de los 2 metodos:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

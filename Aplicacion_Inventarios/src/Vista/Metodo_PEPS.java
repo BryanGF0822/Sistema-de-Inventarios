@@ -24,12 +24,13 @@ public class Metodo_PEPS extends Application{
     public void start(Stage primaryStage) throws Exception {
     	ReferenceStage = primaryStage;
     	FXMLLoader loader = new FXMLLoader();
-    	loader.setController(new Metodo_PEPSController(this,app));
+    	Metodo_PEPSController ref = new Metodo_PEPSController(this,app);
+    	loader.setController(ref);
     	URL xmlUrl = getClass().getResource("Metodo_PEPS.fxml");
     	loader.setLocation(xmlUrl);
     	AnchorPane root = loader.load();
-
     	primaryStage.setScene(new Scene(root));
+    	ref.setup();
     	primaryStage.show();
     }
 
