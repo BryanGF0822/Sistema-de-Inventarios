@@ -1,6 +1,7 @@
 package Controladores;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import Modelo.Articulo;
 import Modelo.ItemArticulo;
@@ -48,7 +49,60 @@ public class Historial_InventarioController {
 	
 	@FXML
     void order(ActionEvent event) {
-		
+		Integer indx = orderChoice.getSelectionModel().getSelectedIndex();
+    	
+    	if(indx != -1) {
+    		setup();
+    		ArrayList<Articulo> ref = new ArrayList<Articulo>();
+    		switch (indx) {
+			case 0:
+				ref = app.getArticulos();
+				Collections.sort(ref,Articulo.dateInComparator);
+				for(Articulo it : ref) {
+					inList.getItems().add(it.toStringIn());
+					outList.getItems().add(it.toStringOut());
+				}
+				break;
+			case 1:
+				ref = app.getArticulos();
+				Collections.sort(ref,Articulo.dateOutComparator);
+				for(Articulo it : ref) {
+					inList.getItems().add(it.toStringIn());
+					outList.getItems().add(it.toStringOut());
+				}
+				break;
+			case 2:
+				ref = app.getArticulos();
+				Collections.sort(ref,Articulo.alphaComparator);
+				for(Articulo it : ref) {
+					inList.getItems().add(it.toStringIn());
+					outList.getItems().add(it.toStringOut());
+				}
+				break;
+			case 3:
+				ref = app.getArticulos();
+				Collections.sort(ref,Articulo.dispComparator);
+				for(Articulo it : ref) {
+					inList.getItems().add(it.toStringIn());
+					outList.getItems().add(it.toStringOut());
+				}
+				break;
+			case 4:
+				ref = app.getArticulos();
+				Collections.sort(ref,Articulo.vendComparator);
+				for(Articulo it : ref) {
+					inList.getItems().add(it.toStringIn());
+					outList.getItems().add(it.toStringOut());
+				}
+				break;
+				
+
+			default:
+				break;
+			}
+    	}else {
+    		createAlert("Selecciona un articulo!",AlertType.WARNING);
+    	}
     }
 
     @FXML
@@ -56,8 +110,10 @@ public class Historial_InventarioController {
     	Integer indx = productChoice.getSelectionModel().getSelectedIndex();
     	
     	if(indx != -1) {
+    		setup();
     		Articulo ref = app.getArticulos().get(indx);
-    		
+    		inList.getItems().add(ref.toStringIn());
+			outList.getItems().add(ref.toStringOut());
     	}else {
     		createAlert("Selecciona un articulo!",AlertType.WARNING);
     	}
@@ -69,10 +125,19 @@ public class Historial_InventarioController {
 			productChoice.getItems().add(it.getNombre()+" "+it.getCantidadMedida()+" "+it.getTipoMedida());
 		}
 		orderChoice.getItems().clear();
-		orderChoice.getItems().add("Fecha");
+		orderChoice.getItems().add("Ultima fecha de compra");
+		orderChoice.getItems().add("Ultima fecha de venta");
 		orderChoice.getItems().add("Orden alfabetico");
 		orderChoice.getItems().add("Cantidad de unidades adquiridas");
 		orderChoice.getItems().add("Cantidad de unidades vendidas");
+		
+		inList.getItems().clear();
+		outList.getItems().clear();
+		inList.getItems().
+		add("|___Fecha___| - |___________Nombre___________| - |Cantidad adquirida|");
+		outList.getItems().
+		add("|___Fecha___| - |___________Nombre___________| - |_Cantidad vendida_|");
+		
 	}
 	
 	void createAlert(String message,AlertType mtype) {

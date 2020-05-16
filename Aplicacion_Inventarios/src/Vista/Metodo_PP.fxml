@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -15,44 +14,11 @@
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="381.0" layoutY="31.0" text="Metodo Promedio Ponderado">
+      <Label layoutX="381.0" layoutY="31.0" text="Metodo PP">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <Button layoutX="752.0" layoutY="515.0" mnemonicParsing="false" onAction="#irAlMenu" text="Retornar">
-         <font>
-            <Font name="System Bold Italic" size="14.0" />
-         </font>
-      </Button>
-      <TableView fx:id="infoTable" layoutX="17.0" layoutY="127.0" prefHeight="357.0" prefWidth="830.0">
-         <columns>
-            <TableColumn prefWidth="75.0" text="Fecha" />
-            <TableColumn prefWidth="75.0" text="Concepto" />
-            <TableColumn prefWidth="75.0" text="Entrada">
-               <columns>
-                  <TableColumn prefWidth="75.0" text="Unidades" />
-                  <TableColumn prefWidth="75.0" text="Cst unitario" />
-                  <TableColumn prefWidth="75.0" text="Cst Total" />
-               </columns>
-            </TableColumn>
-            <TableColumn prefWidth="75.0" text="Salida">
-               <columns>
-                  <TableColumn prefWidth="75.0" text="Unidades" />
-                  <TableColumn prefWidth="75.0" text="Cst unitario" />
-                  <TableColumn prefWidth="75.0" text="Cst Total" />
-               </columns>
-            </TableColumn>
-            <TableColumn prefWidth="75.0" text="Saldo">
-               <columns>
-                  <TableColumn prefWidth="75.0" text="Unidades" />
-                  <TableColumn prefWidth="75.0" text="Cst unitario" />
-                  <TableColumn prefWidth="75.0" text="Cst Total" />
-               </columns>
-            </TableColumn>
-         </columns>
-      </TableView>
-      <ChoiceBox fx:id="artChoice" layoutX="321.0" layoutY="77.0" prefWidth="150.0" />
       <Label layoutX="19.0" layoutY="81.0" text="Escoge el articulo al que le quieres hacer la evalución:" />
       <Label layoutX="47.0" layoutY="512.0" text="El costo de vender una unidad  se encuentra en la columna de Saldo-Cst unitario">
          <font>
@@ -64,6 +30,14 @@
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Label>
-      <Button layoutX="529.0" layoutY="77.0" mnemonicParsing="false" onAction="#calcKardex" text="Calcular Kardex" />
+      <Button fx:id="calcButton" layoutX="561.0" layoutY="74.0" mnemonicParsing="false" onAction="#calcKardex" text="Calcular Kardex" />
+      <ListView fx:id="infoTable" layoutX="39.0" layoutY="152.0" prefHeight="292.0" prefWidth="422.0" />
+      <ListView fx:id="outTable" layoutX="461.0" layoutY="152.0" prefHeight="292.0" prefWidth="310.0" />
+      <ComboBox fx:id="artChoice" layoutX="372.0" layoutY="76.0" prefWidth="150.0" />
+      <Button layoutX="711.0" layoutY="517.0" mnemonicParsing="false" onAction="#irAlMenu" text="Menu Principal">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

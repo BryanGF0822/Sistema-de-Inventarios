@@ -90,7 +90,7 @@ public class Entrada_ProductoController {
 				ItemArticulo item = new ItemArticulo(valor,cant, date, categoria, true,app.getId_item());
 				
 				app.getArticulos().get(artiInteger).getItems().add(item);
-				app.getArticulos().get(artiInteger).setAgregarU(cant);
+				app.getArticulos().get(artiInteger).setAgregarU(cant,date);
 				tempFactura.getItemsFactura().add(item);
 				
 				createAlert("Producto registrado correctamente",AlertType.INFORMATION);

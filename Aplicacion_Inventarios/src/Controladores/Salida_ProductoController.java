@@ -69,7 +69,7 @@ public class Salida_ProductoController {
 			int itemDisp = app.getArticulos().get(idArticulo[val]).getCantidadDisponible();
 			if(cant<=itemDisp) {		
 				createAlert("Se registro la salida de productos exitosamente!",AlertType.INFORMATION);
-				app.getArticulos().get(idArticulo[val]).setAgregarU(-cant);
+				app.getArticulos().get(idArticulo[val]).setAgregarU(-cant,date);
 				app.getArticulos().get(idArticulo[val]).getItems().add(new ItemArticulo(0, cant, date, tipo, false,app.getId_item()));
 				setup();
 			}else {
