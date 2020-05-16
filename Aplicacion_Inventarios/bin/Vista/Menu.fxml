@@ -10,14 +10,14 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label graphicTextGap="6.0" layoutX="229.0" layoutY="28.0" prefHeight="37.0" prefWidth="143.0" text="MENU PRINCIPAL">
+      <Label graphicTextGap="6.0" layoutX="229.0" layoutY="28.0" prefHeight="37.0" prefWidth="161.0" text="MENU PRINCIPAL">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <HBox layoutX="82.0" layoutY="84.0" prefHeight="277.0" prefWidth="505.0">
+      <HBox layoutX="17.0" layoutY="84.0" prefHeight="277.0" prefWidth="570.0">
          <children>
-            <VBox prefHeight="281.0" prefWidth="303.0" spacing="10.0">
+            <VBox prefHeight="267.0" prefWidth="281.0" spacing="10.0">
                <children>
                   <Button mnemonicParsing="false" onAction="#ingresarProducto" text="ENTRADA PRODUCTO">
                      <font>
@@ -29,7 +29,7 @@
                         <Font name="System Bold Italic" size="14.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#agregarProveedor" text="REGISTRAR PROVEEDOR">
+                  <Button mnemonicParsing="false" onAction="#agregarProveedor" text=" PROVEEDORES">
                      <font>
                         <Font name="System Bold Italic" size="14.0" />
                      </font>
@@ -70,7 +70,7 @@
                         <Font name="Cambria" size="14.0" />
                      </font>
                   </Label>
-                  <Label text="Agregue un proveedor de confianza">
+                  <Label text="Agregue/Actualice un proveedor de confianza">
                      <font>
                         <Font name="Cambria" size="14.0" />
                      </font>

@@ -118,7 +118,7 @@ public class Articulo {
 	}
 	
 	public String toStringIn() {
-		String out = String.format("|%10.20s| -|%-20.20s| - |%10.10s|",ultimaEntrada.toString() ,nombre, String.valueOf(cantidadDisponible+cantidadVendida));
+		String out = String.format("|%10.20s| -|%-20.20s| - |%10.10s|",ultimaEntrada.toString() ,nombre, String.valueOf(cantidadDisponible));
 		return out;
 	}
 	
@@ -140,14 +140,14 @@ public class Articulo {
 	public static Comparator<Articulo> dateInComparator = new Comparator<Articulo>() {
 		@Override
 		public int compare(Articulo o1, Articulo o2) {
-			return o1.getUltimaEntrada().compareTo(o2.getUltimaEntrada());
+			return -(o1.getUltimaEntrada().compareTo(o2.getUltimaEntrada()));
 		}
     };
     
     public static Comparator<Articulo> dateOutComparator = new Comparator<Articulo>() {
 		@Override
 		public int compare(Articulo o1, Articulo o2) {
-			return o1.getUltimaSalida().compareTo(o2.getUltimaSalida());
+			return -(o1.getUltimaSalida().compareTo(o2.getUltimaSalida()));
 		}
     };
     
@@ -161,14 +161,14 @@ public class Articulo {
     public static Comparator<Articulo> dispComparator = new Comparator<Articulo>() {
 		@Override
 		public int compare(Articulo o1, Articulo o2) {
-			return o1.getCantidadDisponible() - o2.getCantidadDisponible();
+			return -(o1.getCantidadDisponible() - o2.getCantidadDisponible());
 		}
     };
     
     public static Comparator<Articulo> vendComparator = new Comparator<Articulo>() {
 		@Override
 		public int compare(Articulo o1, Articulo o2) {
-			return o1.getCantidadVendida() - o2.getCantidadVendida();
+			return -(o1.getCantidadVendida() - o2.getCantidadVendida());
 		}
     };
     
